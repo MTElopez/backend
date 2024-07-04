@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='estilos.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='colores.css') }}">
+    <title>Juegos para PC</title>
+</head>
+<body>
+    <header class="color1">
+        <nav class="topright">
+            <a href="../Formulario/index.html" class="enlace">Registrate</a>
+        </nav>                
+        <h1>Juegos para PC</h1>
+        <nav>
+            <ul class="menu">
+                <li><a href="http://127.0.0.1:5000/" class="enlace">texto</a></li>
+                <li><a href="http://127.0.0.1:5000/imagen" class="enlace">imagenes</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main class="color2">
+        <section>
+            <h2 class="color3">imagen</h2>
+            {% for u in usuario %}
+            <form action="">
+                <table>
+                    <tbody>
+                        <tr>
+                            <td><label for="id">Id:</label></td>
+                            <td><input name="ID" value="{{ u.id }}"></td>
+                        </tr>
+                        <tr>
+                            <td><label for="apellido">apellido:</label></td>
+                            <td> <input name="nombre" value="{{u.nombre}}"> </td>
+                        </tr>
+                        <tr>
+                            <td><label for="edad">edad:</label></td>
+                            <td><input name="edad" value="{{ u.edad }}"></td>
+                        </tr>
+                        <tr>
+                            <td><label for="email">email:</label></td>
+                            <td><input name="email" value="{{ u.email }}"></td>
+                        </tr>
+                        <tr>
+                            <td><label for="contraseña">contraseña:</label></td>
+                            <td><input name="contraseña" value="{{ u.contraseña }}"></td>
+                        </tr>
+                        <tr>
+                            <td> </td>
+                            <td><a href="{{ url_for('eliminar_usuario', id =u.id)}}">eliminar</a> <button>modifiar</button> </td>
+                        </tr>
+                    </tbody>    
+                </table>
+                {% endfor %}
+            </form>
+        </section>
+    </main>
+    <footer class="color1">
+        <nav>
+            <nav>
+                <ul class="menu">
+                    <li><a href="../index.html" class="enlace">texto</a></li>
+                    <li><a href="../Playstation/index.html" class="enlace">imagen</a></li>                
+                </ul>
+            </nav>
+        </nav>
+    </footer>
+</body>
+</html>

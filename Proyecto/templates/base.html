@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='estilos.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='colores.css') }}">
+    <title>Juegos para PC</title>
+</head>
+<body>
+    <header class="color1">
+        <nav class="topright">
+            <a href="../Formulario/index.html" class="enlace">Registrate</a>
+        </nav>                
+        <h1>Juegos para PC</h1>
+        <h2>En esta sección encontraras los mas grandes exitos en ventas de juegos, asi como sus requisitos tecnicos, descripciones y un link a sus sitios oficiales</h2>
+        <nav>
+            <ul class="menu">
+                <li><a href="http://127.0.0.1:5000/usuario" class="enlace">usuario</a></li>
+                <li><a href="http://127.0.0.1:5000/imagen" class="enlace">imagenes</a></li>                
+            </ul>
+        </nav>
+    </header>
+    <main class="color2">
+        <div>
+            <h2 class="color3">datos</h2>
+            {% for j in juegos %}
+                <li>{{ j.nombre}}</li>
+                <li>{{ j.descripcion }}</li>
+                <button>modificar</button>
+                <button>eliminar</button>
+            {% endfor %}    
+        </div>
+    </main>
+    <footer class="color1">
+        <nav>
+            <ul class="menu">
+                <li><a href="../index.html" class="enlace">texto</a></li>
+                <li><a href="../Playstation/index.html" class="enlace">imagen</a></li>                
+            </ul>
+        </nav>
+    </footer>
+</body>
+</html>
